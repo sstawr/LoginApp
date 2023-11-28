@@ -9,17 +9,15 @@ import UIKit
 
 final class LoginViewController: UIViewController {
     
+    // MARK: - IB Outlets
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
+    // MARK: - Private Properties
     private let username = "user"
     private let password = "111"
     
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        // Do any additional setup after loading the view.
-//    }
-    
+    // MARK: - Overrides Methods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super .touchesBegan(touches, with: event)
         userNameTextField.endEditing(true)
@@ -38,8 +36,7 @@ final class LoginViewController: UIViewController {
             )
             return false
         }
-        
-        // Введенное имя валидно, разрешаем переход
+
         return true
     }
     
@@ -48,6 +45,7 @@ final class LoginViewController: UIViewController {
         welcomeVC?.userNameValue = userNameTextField.text
     }
     
+    // MARK: - IB Actions
     @IBAction func forgotUsernameButtonDidTapped() {
         showAlert(withTItle: "Oops", andMessage: "Your username is \(username)")
     }
@@ -61,13 +59,14 @@ final class LoginViewController: UIViewController {
         passwordTextField.text = ""
     }
     
+    // MARK: - Private Methods
     private func showAlert(withTItle title: String, andMessage message: String) {
         let alert = UIAlertController(
             title: title,
             message: message,
             preferredStyle: .alert
         )
-        //Возможно доработать
+        
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
             self.userNameTextField.text = ""
             self.passwordTextField.text = ""
