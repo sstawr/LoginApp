@@ -48,16 +48,17 @@ final class LoginViewController: UIViewController {
         welcomeVC?.userNameValue = userNameTextField.text
     }
     
-    @IBAction func forgotUsernameButtonDidTapped(_ sender: Any) {
+    @IBAction func forgotUsernameButtonDidTapped() {
         showAlert(withTItle: "Oops", andMessage: "Your username is \(username)")
     }
     
-    @IBAction func forgotPasswordButtonDidTapped(_ sender: Any) {
+    @IBAction func forgotPasswordButtonDidTapped() {
         showAlert(withTItle: "Oops", andMessage: "Your password is \(password)")
     }
     
-    @IBAction func logInButtonDidTapped(_ sender: Any) {
-        
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        userNameTextField.text = ""
+        passwordTextField.text = ""
     }
     
     private func showAlert(withTItle title: String, andMessage message: String) {

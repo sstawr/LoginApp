@@ -40,7 +40,6 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Log In"/>
                                         <connections>
-                                            <action selector="logInButtonDidTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1dO-ZE-rct"/>
                                             <segue destination="YAw-Gi-O8I" kind="presentation" modalPresentationStyle="fullScreen" id="gPE-FD-4Is"/>
                                         </connections>
                                     </button>
@@ -54,7 +53,7 @@
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="forgotUsernameButtonDidTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Tl-Pu-yqu"/>
+                                                    <action selector="forgotUsernameButtonDidTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="kpG-fI-44V"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="right" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWc-Kv-rda">
@@ -64,7 +63,7 @@
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="forgotPasswordButtonDidTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sB3-8G-aoM"/>
+                                                    <action selector="forgotPasswordButtonDidTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="mKR-Jx-md2"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -124,6 +123,9 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Log Out"/>
+                                <connections>
+                                    <segue destination="GxN-fO-cRA" kind="unwind" unwindAction="unwindFor:" id="Nxi-fh-UCb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dvk-Id-Wo7"/>
@@ -143,6 +145,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MTR-7O-SWw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="GxN-fO-cRA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="864.8854961832061" y="-27.464788732394368"/>
         </scene>
