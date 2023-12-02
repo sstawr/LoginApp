@@ -19,9 +19,8 @@ final class LoginViewController: UIViewController {
     
     // MARK: - Overrides Methods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super .touchesBegan(touches, with: event)
-        userNameTextField.endEditing(true)
-        passwordTextField.endEditing(true)
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
     
     override func shouldPerformSegue(
