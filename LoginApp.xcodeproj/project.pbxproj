@@ -17,6 +17,7 @@
 		6A9CC0AF2B16153400867103 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A9CC0AE2B16153400867103 /* Assets.xcassets */; };
 		6A9CC0B22B16153400867103 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A9CC0B02B16153400867103 /* LaunchScreen.storyboard */; };
 		6A9CC0D42B16550700867103 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9CC0D32B16550700867103 /* WelcomeViewController.swift */; };
+		6AD1E8782B1BC62C00888888 /* BioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD1E8772B1BC62C00888888 /* BioViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		6A9CC0B12B16153400867103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A9CC0B32B16153400867103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A9CC0D32B16550700867103 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		6AD1E8772B1BC62C00888888 /* BioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				6A9CC0A92B16153300867103 /* LoginViewController.swift */,
 				6A9CC0D32B16550700867103 /* WelcomeViewController.swift */,
 				6A05DAA32B1BB6440057028F /* AboutViewController.swift */,
+				6AD1E8772B1BC62C00888888 /* BioViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				6A05DAA22B1B89390057028F /* Person.swift in Sources */,
 				6A9CC0AA2B16153300867103 /* LoginViewController.swift in Sources */,
 				6A9CC0D42B16550700867103 /* WelcomeViewController.swift in Sources */,
+				6AD1E8782B1BC62C00888888 /* BioViewController.swift in Sources */,
 				6A05DAA42B1BB6440057028F /* AboutViewController.swift in Sources */,
 				6A9CC0A62B16153300867103 /* AppDelegate.swift in Sources */,
 				6A05DAA02B1B88E30057028F /* User.swift in Sources */,

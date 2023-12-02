@@ -52,6 +52,10 @@ final class LoginViewController: UIViewController {
             if let welcomeVC = viewController as? WelcomeViewController {
                 welcomeVC.userNameValue = userNameTextField.text
                 welcomeVC.person = user.person
+            } else if let navigationVC = viewController as? UINavigationController {
+                let aboutVC = navigationVC.topViewController as? AboutViewController
+                aboutVC?.title = user.person.firstName + " " + user.person.lastName
+                aboutVC?.personInfo = user.person
             }
         }
     }
