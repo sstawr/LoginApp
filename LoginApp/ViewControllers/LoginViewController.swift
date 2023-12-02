@@ -14,10 +14,15 @@ final class LoginViewController: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     
     // MARK: - Private Properties
-    private let username = "user"
-    private let password = "111"
+    private let user = User.getUser()
     
     // MARK: - Overrides Methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        userNameTextField.text = user.userName
+        passwordTextField.text = user.password
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
@@ -27,8 +32,8 @@ final class LoginViewController: UIViewController {
         withIdentifier identifier: String,
         sender: Any?
     ) -> Bool {
-        guard userNameTextField.text == username,
-              passwordTextField.text == password else {
+        guard userNameTextField.text == user.userName,
+              passwordTextField.text == user.password else {
             showAlert(
                 withTItle: "Ivalid username or password",
                 andMessage: "Please enter correct data") {
@@ -41,15 +46,21 @@ final class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let welcomeVC = segue.destination as? WelcomeViewController
-        welcomeVC?.userNameValue = userNameTextField.text
+        let tabBarVC = segue.destination as? UITabBarController
+        
+        tabBarVC?.viewControllers?.forEach{ viewController in
+            if let welcomeVC = viewController as? WelcomeViewController {
+                welcomeVC.userNameValue = userNameTextField.text
+                welcomeVC.person = user.person
+            }
+        }
     }
     
     // MARK: - IB Actions
     @IBAction func forgotRegisterData(_ sender: UIButton) {
         sender.tag == 0
-        ? showAlert(withTItle: "Oops", andMessage: "Your username is \(username)")
-        : showAlert(withTItle: "Oops", andMessage: "Your password is \(password)")
+        ? showAlert(withTItle: "Oops", andMessage: "Your username is \(user.userName)")
+        : showAlert(withTItle: "Oops", andMessage: "Your password is \(user.password)")
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
