@@ -53,17 +53,17 @@
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="forgotUsernameButtonDidTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="kpG-fI-44V"/>
+                                                    <action selector="forgotRegisterData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3hg-HJ-1ed"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="right" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWc-Kv-rda">
+                                            <button opaque="NO" tag="1" contentMode="right" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWc-Kv-rda">
                                                 <rect key="frame" x="155" y="0.0" width="125" height="28.5"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Forgot Password?">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="forgotPasswordButtonDidTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="mKR-Jx-md2"/>
+                                                    <action selector="forgotRegisterData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gIy-2C-dC8"/>
                                                 </connections>
                                             </button>
                                         </subviews>

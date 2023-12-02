@@ -31,8 +31,9 @@ final class LoginViewController: UIViewController {
               passwordTextField.text == password else {
             showAlert(
                 withTItle: "Ivalid username or password",
-                andMessage: "Please enter correct data"
-            )
+                andMessage: "Please enter correct data") {
+                    self.passwordTextField.text = ""
+                }
             return false
         }
 
@@ -45,12 +46,10 @@ final class LoginViewController: UIViewController {
     }
     
     // MARK: - IB Actions
-    @IBAction func forgotUsernameButtonDidTapped() {
-        showAlert(withTItle: "Oops", andMessage: "Your username is \(username)")
-    }
-    
-    @IBAction func forgotPasswordButtonDidTapped() {
-        showAlert(withTItle: "Oops", andMessage: "Your password is \(password)")
+    @IBAction func forgotRegisterData(_ sender: UIButton) {
+        sender.tag == 0
+        ? showAlert(withTItle: "Oops", andMessage: "Your username is \(username)")
+        : showAlert(withTItle: "Oops", andMessage: "Your password is \(password)")
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
@@ -59,7 +58,7 @@ final class LoginViewController: UIViewController {
     }
     
     // MARK: - Private Methods
-    private func showAlert(withTItle title: String, andMessage message: String) {
+    private func showAlert(withTItle title: String, andMessage message: String, completion: (() -> Void)? = nil) {
         let alert = UIAlertController(
             title: title,
             message: message,
@@ -67,8 +66,7 @@ final class LoginViewController: UIViewController {
         )
         
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            self.userNameTextField.text = ""
-            self.passwordTextField.text = ""
+            completion?()
         }
         
         alert.addAction(okAction)
